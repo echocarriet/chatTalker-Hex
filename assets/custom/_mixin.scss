@@ -1,0 +1,91 @@
+// ----- Breakpoint
+$sizing: (
+  none: none,
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+) !default;
+$text: (
+  start: left,
+  end: right,
+  center: center,
+) !default;
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+  @include media-breakpoint-up($breakpoint) {
+    $infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+    // Font size
+    @each $size, $value in $font-sizes {
+      .fs#{$infix}-#{$size} {
+        font-size: $value  !important;
+      }
+    }
+    // Spacing | margin、padding
+    @each $size, $value in $spacers {
+      .m#{$infix}-#{$size} {
+        margin: $value  !important;
+      }
+      .mx#{$infix}-#{$size} {
+        margin-right: $value  !important;
+        margin-left: $value  !important;
+      }
+      .my#{$infix}-#{$size} {
+        margin-top: $value  !important;
+        margin-bottom: $value  !important;
+      }
+      .mt#{$infix}-#{$size} {
+        margin-top: $value  !important;
+      }
+      .mb#{$infix}-#{$size} {
+        margin-bottom: $value  !important;
+      }
+      .ms#{$infix}-#{$size} {
+        margin-left: $value  !important;
+      }
+      .me#{$infix}-#{$size} {
+        margin-right: $value  !important;
+      }
+      //padding
+      .p#{$infix}-#{$size} {
+        padding: $value  !important;
+      }
+      .px#{$infix}-#{$size} {
+        padding-right: $value  !important;
+        padding-left: $value  !important;
+      }
+      .py#{$infix}-#{$size} {
+        padding-top: $value  !important;
+        padding-bottom: $value  !important;
+      }
+      .pt#{$infix}-#{$size} {
+        padding-top: $value  !important;
+      }
+      .pb#{$infix}-#{$size} {
+        padding-bottom: $value  !important;
+      }
+      .ps#{$infix}-#{$size} {
+        padding-left: $value  !important;
+      }
+      .pe#{$infix}-#{$size} {
+        padding-right: $value  !important;
+      }
+      
+    }
+
+    // sizing | 高度
+    @each $size, $value in $sizing {
+      .h#{$infix}-#{$size} {
+        height: $value  !important;
+      }
+    }
+    // text-alight
+    @each $size, $value in $text {
+      .text#{$infix}-#{$size} {
+        text-align: $value  !important;
+      }
+    }
+  }
+}
+
+

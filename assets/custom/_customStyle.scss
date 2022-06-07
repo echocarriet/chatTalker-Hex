@@ -1,0 +1,324 @@
+img {
+  display: block;
+}
+
+.img-cover {
+  object-fit: cover;
+  object-position: center center;
+  max-width: 100%;
+  height: auto;
+}
+
+.bg-cover {
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+}
+
+
+//------- Mobile
+.goTopBtn {
+  font-family: 'Wendy One';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  color: $white;
+  font-size: 14px;
+  z-index: 10;
+  right: 16px;
+  bottom: 16px;
+  &:focus {
+    color: $white;
+  }
+  &:active {
+    color: $white;
+  }
+}
+.hero {
+  // index.html
+  &-man {
+    background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/home.svg') no-repeat;
+    width: 100%;
+    height: 305px;
+    background-position: center;
+  }
+
+  &-ball {
+    background: url("https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball01.svg") no-repeat;
+    background-position: right;
+    width: 49px;
+    height: 129px;
+    background-size: 129px;
+    top: calc(100vh + 75px);
+    z-index: -10;
+  }
+
+  &-manBg {
+    height: 80%;
+    z-index: -5;
+  }
+
+  &-greenBall {
+    background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball02.svg') no-repeat;
+    width: 88px;
+    height: 135px;
+    background-position: left;
+    background-size: 135px;
+    right: 0;
+    bottom: -35px;
+    z-index: -10;
+  }
+
+  &-yellowBall {
+    background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball03.svg') no-repeat;
+    width: 77px;
+    height: 153px;
+    top: 317px;
+    background-position: right;
+    background-size: 153px;
+    z-index: -10;
+  }
+  // program.index
+  &-talk {
+    background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner_sm.svg') no-repeat;
+    width: 100%;
+    min-height: 495px;
+    background-position: bottom right;
+    background-size: cover;
+    z-index: -10;
+    top: 77.59px;
+    &Bg {
+      background-color: #F7F9FD;
+      border-bottom-left-radius: 150px;
+      width: 100%;
+      min-height: 495px;
+      z-index: -11;
+      top: 77.59px;
+    }
+  }
+  &-programBall {
+    background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/ball03.svg') no-repeat;
+    width: 94px;
+    height: 361px;
+    background-position: right;
+    background-size: 361px;
+    top: 40%;
+    z-index: -10;
+  }
+}
+
+// 首頁手機版橫放，視窗高度太小下方區塊字會和100vh區塊重疊，這邊另外在 js 做監聽
+.layout-100vh {
+  height: 100vh;
+}
+
+.navBottom-line {
+  border-bottom: 2px solid $warning;
+}
+
+.logoBanner {
+  height: 24px;
+}
+
+.hr-divider {
+  border-bottom: 1px solid #DDDDDD;
+  margin: 16px 0;
+}
+
+.footer-bg {
+  background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/footer_sm.svg') no-repeat;
+  width: 100%;
+  min-height: 461px;
+  background-position: top center;
+  background-size: contain;
+}
+
+// program.html
+.header-minHeight {
+  min-height: 495px;
+}
+.btnGroup-program {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
+  & .btn {
+    &:hover{
+      color: #fff;
+    }
+    &.active {
+      color: #fff;
+    }
+    &:focus {
+      box-shadow: none;
+    }
+  }
+}
+
+//------- ≥576
+@include media-breakpoint-up(sm) {
+  .hero {
+    &-man {
+      height: 480px;
+    }
+
+    &-greenBall {
+      width: 210px;
+      height: 310px;
+      background-position: left;
+      background-size: 310px;
+      right: 0;
+      bottom: -150px;
+    }
+  }
+
+  .full-minHeight {
+    min-height: 840px;
+  }
+
+  .footer-bg {
+    background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/home_footer.svg') no-repeat;
+    min-height: 503px;
+    background-position: top center;
+    background-size: cover;
+  }
+
+}
+
+//------- 平板 ≥768
+@include media-breakpoint-up(md) {
+  .hero {
+    &-yellowHome {
+      background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/bg_home.svg') no-repeat;
+      width: 850px;
+      height: 100vh;
+      background-position: bottom left;
+      background-size: cover;
+      top: 0;
+      right: 0;
+      z-index: -10;
+    }
+
+    &-ball {
+      background-position: right;
+      width: 180px;
+      height: 360px;
+      background-size: 360px;
+      top: calc(100vh - 180px);
+    }
+
+    &-man {
+      height: 532px;
+    }
+
+    &-yellowBall {
+      width: 150px;
+      height: 150px;
+      left: 50px;
+      top: 35px;
+      background-size: 150px;
+      z-index: -10;
+    }
+
+    &-talk {
+      background: url('https://raw.githubusercontent.com/hexschool/webLayoutTraining1st/f70f00178a7f0baa31e9c01634303d8562cfe93a/chatTalker_images/banner.svg') no-repeat;
+      width: 100%;
+      min-height: 559px;
+      background-position: bottom right;
+      background-size: cover;
+      z-index: -10;  
+      top:0;
+      &Bg {
+        background-color: #F7F9FD;
+        border-bottom-left-radius: 300px;
+        width: 100%;
+        min-height: 470px;
+        background-size: 470px;
+        z-index: -11;
+        top:0;
+      }
+    }
+    &-programBall {
+      top: 20%;
+    }
+  }
+  
+  // others
+  .navBottom-line {
+    border-bottom: none;
+  }
+
+  .logoBanner {
+    height: 40px;
+  }
+
+  .hr-divider {
+    margin: 24px 0;
+  }
+  // program.html
+  .header-minHeight {
+    min-height: 559px;
+  }
+  .btnGroup-program {
+    justify-content: center;
+  }
+}
+
+//------- 桌機 ≥1088
+@include media-breakpoint-up(lg) {
+  .hero {
+    &-talk {
+      background-size: contain;
+    }
+  }
+}
+
+// Swiper 套件
+.swiper {
+  width: 100%;
+  height: 100%;
+  &-slide {
+    /* Center slide text vertically */
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    box-shadow: 0px 2px 5px #00000014;
+    border: 1px solid #00000014;
+    border-radius: 12px;
+    background: #fff;
+  }
+  &-pagination {
+    position: relative;
+    text-align: center;
+    transition: .3s opacity;
+    transform: translate3d(0, 0, 0);
+    z-index: 10;
+    margin-top:24px;
+  }
+
+  &-pagination-bullet {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+    background: #DDDDDD;
+  }
+
+  &-pagination-bullet-active {
+    width: 16px;
+    height: 10px;
+    background: #FFD153;
+    border-radius: 50px;
+  }
+}
